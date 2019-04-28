@@ -12,6 +12,7 @@ except ImportError:
 if __name__ == '__main__':        
     # context.terminal = ['tmux', 'splitw', '-h'] # uncomment this if you use tmux
     context.log_level = 'debug'
+    context.arch='amd64'
     # functions for quick script
     s       = lambda data               :ctx.send(str(data))        #in case that data is an int
     sa      = lambda delim,data         :ctx.sendafter(str(delim), str(data)) 

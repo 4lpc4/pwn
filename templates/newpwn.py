@@ -2,6 +2,8 @@ from pwn import *
 import sys
 from pwnlib.util.proc import wait_for_debugger
 context.log_level = 'debug'
+context.arch='amd64'
+
 libc = ELF('./libc.so.6')
 elf = ELF('./pwn')
 
