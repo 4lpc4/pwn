@@ -11,7 +11,8 @@ from PwnContext.core import *
 '''
 
 template = '''
-#https://github.com/matrix1001/welpwn
+import sys
+sys.path.insert(0,'{dir}')
 from PwnContext import *
 
 try:
@@ -63,7 +64,10 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
     if args.template:
-        print(template)
+        currentdir = os.path.dirname(                                                                                                          
+             os.path.abspath(inspect.getfile(inspect.currentframe()))
+        )
+        print(template.format(dir=currentdir))
     else:
         currentdir = os.path.dirname(
             os.path.abspath(inspect.getfile(inspect.currentframe()))
